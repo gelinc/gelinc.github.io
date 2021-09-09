@@ -12,6 +12,7 @@ include: ["_pages"]
 permalink: /:title/
 email:
 instagram: gelinc_unb
+linkedin: gelinc
 
 # Authors
 authors:
