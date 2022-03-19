@@ -13,11 +13,19 @@ title: Home
 
 <!-- Posts Lingua
 ================================================== -->
-<div>
-{% assign posts = site.posts | where:"lang", page.lang %}
-{% for post in posts %}
+<h1>Select Your Language</h1>
+{% for lang in site.data.languages %}
+  {% assign langCode = lang[0] %}
+  {% if langCode == 'en' %}{% continue %}{% endif %}
+  <em>{{ site.data.translations.selectLang[langCode] }}</em><br />
 {% endfor %}
-</div>
+
+<ul class="languages">
+{% for lang in site.data.languages %}
+{% assign language = lang[1] %}
+<li><a href="/{{lang[0]}}">{{language.icon}} {{ language.label }} ({{ lang[0] }})</a></li>
+{% endfor %}
+</ul>
 
 <!-- Pagination
 ================================================== -->
