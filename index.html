@@ -11,22 +11,6 @@ title: Home
     {% endfor %}
 </div>
 
-<!-- Posts Lingua
-================================================== -->
-<h1>Select Your Language</h1>
-{% for lang in site.data.languages %}
-  {% assign langCode = lang[0] %}
-  {% if langCode == 'en' %}{% continue %}{% endif %}
-  <em>{{ site.data.translations.selectLang[langCode] }}</em><br />
-{% endfor %}
-
-<ul class="languages">
-{% for lang in site.data.languages %}
-{% assign language = lang[1] %}
-<li><a href="/{{lang[0]}}">{{language.icon}} {{ language.label }} ({{ lang[0] }})</a></li>
-{% endfor %}
-</ul>
-
 <!-- Pagination
 ================================================== -->
 <div class="bottompagination">
@@ -34,4 +18,3 @@ title: Home
     {% include pagination.html %}
 </span>
 </div>
-
